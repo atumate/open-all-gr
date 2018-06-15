@@ -1,0 +1,31 @@
+{
+  "OAGR_remote":"https://github.com/nixni/open-all-gr",
+  "OAGR_developer":"nixni.cc",
+
+	"name": "Open all GR",
+	"version": "0.1",
+	"description": "Open all Google Results with triple-click",
+  "icons": {
+    "16": "images/open_all_gr_16.png",
+    "32": "images/open_all_gr_48.png",
+    "48": "images/open_all_gr_48.png",
+    "128": "images/open_all_gr_128.png"
+  },
+
+  "permissions": [ "storage","tabs","activeTab"],
+  "manifest_version": 2,
+
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+
+  "content_scripts": [
+   {
+     "matches": ["https://www.google.com/*","https://www.google.com.hk/*"],
+     "js": ["grab_links.js"]
+   }
+ ]
+
+
+}
